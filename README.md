@@ -30,20 +30,20 @@ Our four default experiments are divided into ``volatility``, ``electricity``, `
 ### Step 1: Download data for default experiments
 To download the experiment data, run the following script:
 ```bash
-python3 -m script_download_data $EXPT $OUTPUT_FOLDER
+python -m script_download_data $EXPT .
 ```
 where ``$EXPT`` can be any of {``volatility``, ``electricity``, ``traffic``, ``favorita``}, and ``$OUTPUT_FOLDER`` denotes the root folder in which experiment outputs are saved.
 
 ### Step 2: Train and evaluate network
 To train the network with the optimal default parameters, run:
 ```bash
-python3 -m script_train_fixed_params $EXPT $OUTPUT_FOLDER $USE_GPU 
+python -m script_train_fixed_params $EXPT $OUTPUT_FOLDER $USE_GPU 
 ```
 where ``$EXPT`` and ``$OUTPUT_FOLDER`` are as above, ``$GPU`` denotes whether to run with GPU support (options are {``'yes'`` or``'no'``}).
 
 For full hyperparameter optimization, run:
 ```bash
-python3 -m script_hyperparam_opt $EXPT $OUTPUT_FOLDER $USE_GPU yes
+python -m script_hyperparam_opt $EXPT $OUTPUT_FOLDER $USE_GPU yes
 ```
 where options are as above.
 
